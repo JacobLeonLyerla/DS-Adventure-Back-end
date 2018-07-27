@@ -19,6 +19,10 @@ const Player = new mongoose.Schema({
      type:String,
      required:true
     },
+    gender:{
+        type:String,
+        defualt:"Unknown"
+    },
     health:{
         type:Number,
         default:100
