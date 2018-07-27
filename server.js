@@ -2,10 +2,14 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const playerRouter = require("./Characters/playerRouter")
 const { username, password } = require("./dontlook");
+
 const server = express();
 server.use(cors());
 server.use(express.json());
+
+server.use("/players",playerRouter)
 
 mongoose
   .connect(`mongodb://${username}:${password}@ds255451.mlab.com:55451/ds`, { useNewUrlParser: true })
