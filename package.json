@@ -1,0 +1,13 @@
+{
+  "name": "DS-Adventure-Back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JacobLeonLyerla/DS-Adventure-Back-end.git",
+  "author": "Jacob Leon Lyerla <umasour@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.5"
+  }
+}
