@@ -1,28 +1,22 @@
 const mongoose = require("mongoose")
-
+const ObjectId = mongoose.Schema.Types.ObjectId;
 const Player = new mongoose.Schema({
     name:{
         type:String,
         required:true,
         unique:true
     },
-    gear:{
-        type:Array,
-        defualt: [],       
+  
+
+    age:{
+       type:String,
+       default:"Unknown"
     },
-    items:{
-        type:Array,
-        default:[]
-    },
-    age:String,
     class:{
      type:String,
      required:true
     },
-    gender:{
-        type:String,
-        defualt:"Unknown"
-    },
+   
     health:{
         type:Number,
         default:100
@@ -44,7 +38,10 @@ const Player = new mongoose.Schema({
         default:10
     },
 
-    bio:String,
+    bio:{
+        type:String,
+        default:"Mystery adventurer."
+    },
     password:{
         type:String,
         required:true
@@ -52,8 +49,23 @@ const Player = new mongoose.Schema({
     created:{
         type:Date,
         default:Date.now
-    }
-
+    },
+    gender:{
+        type:String,
+        default:"Unknown"
+    },
+    items:[
+        {
+        type:ObjectId,
+        ref:'Item'
+    },
+],
+gear:[
+    {
+    type:ObjectId,
+    ref:'Item'
+},
+]
 })
 
-module.exports =mongoose.model("Player",Player)
+module.exports =mongoose.model('Player',Player)

@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
-const Player = require('./player')
+const Items = require('./Items')
 
 router.get("/:id",(req,res)=>{
     const {id} = req.params
-    Player
-    .findById(id).populate('items gear')
+    Items
+    .findById(id)
     .then(response=>{
         res.status(202).json(response);
     }).
@@ -19,7 +19,7 @@ router.put("/:id",(req,res)=>{
     const options ={
         new:true
     }
-    Player
+    Items
     .findByIdAndUpdate(id,update,options)
     .then(response=>{
         res.status(200).json(response)
@@ -30,7 +30,7 @@ router.put("/:id",(req,res)=>{
 })
 router
 .get("/",(req,res)=>{
-    Player
+    Items
     .find()
     .sort('-created')
     .then(response=>{
@@ -43,8 +43,8 @@ router
 
 router
 .post('/',(req,res)=>{
-    const player = new Player(req.body)
-    player
+    const items = new Items(req.body)
+    items
     .save()
     .then(response=>{
         res.status(201).json(response)

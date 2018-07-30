@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const ItemsRouter = require("./things/itemsRouter")
 const playerRouter = require("./Characters/playerRouter")
 const { username, password } = require("./dontlook");
 
@@ -10,6 +11,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use("/players",playerRouter)
+server.use("/items",ItemsRouter)
 
 mongoose
   .connect(`mongodb://${username}:${password}@ds255451.mlab.com:55451/ds`, { useNewUrlParser: true })
