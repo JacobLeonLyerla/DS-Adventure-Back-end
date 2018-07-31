@@ -6,7 +6,10 @@ const Player = new mongoose.Schema({
         required:true,
         unique:true
     },
-  
+   currentLocation:{
+    type:ObjectId,
+    ref:'Area'  
+   },
 
     age:{
        type:String,

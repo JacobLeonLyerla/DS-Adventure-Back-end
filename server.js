@@ -3,15 +3,17 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const ItemsRouter = require("./things/itemsRouter")
-const playerRouter = require("./Characters/playerRouter")
+const PlayerRouter = require("./Characters/playerRouter")
+const BHRouter = require("./Locations/bhRouter")
 const { username, password } = require("./dontlook");
 
 const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use("/players",playerRouter)
+server.use("/players",PlayerRouter)
 server.use("/items",ItemsRouter)
+server.use("/blackheart", BHRouter)
 
 mongoose
   .connect(`mongodb://${username}:${password}@ds255451.mlab.com:55451/ds`, { useNewUrlParser: true })

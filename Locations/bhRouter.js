@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
-const Player = require('./player')
+const Area = require('./Area')
 
 router.get("/:id",(req,res)=>{
     const {id} = req.params
-    Player
-    .findById(id).populate('items gear currentLocation')
+    Area
+    .findById(id).populate('items north south east west')
     .then(response=>{
         res.status(202).json(response);
     }).
@@ -19,7 +19,7 @@ router.put("/:id",(req,res)=>{
     const options ={
         new:true
     }
-    Player
+    Area
     .findByIdAndUpdate(id,update,options)
     .then(response=>{
         res.status(200).json(response)
@@ -30,9 +30,8 @@ router.put("/:id",(req,res)=>{
 })
 router
 .get("/",(req,res)=>{
-    Player
+    Area
     .find()
-    .sort('-created')
     .then(response=>{
         res.status(200).json(response)
     })
@@ -43,8 +42,8 @@ router
 
 router
 .post('/',(req,res)=>{
-    const player = new Player(req.body)
-    player
+    const area = new Area(req.body)
+    area
     .save()
     .then(response=>{
         res.status(201).json(response)
