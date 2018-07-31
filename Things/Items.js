@@ -10,6 +10,11 @@ const Item = new mongoose.Schema({
     require: true,
     unique: true
   },
+
+  slot:{
+    type:String,
+    required:true
+  },
   health:Number
   ,
   endurance:Number
@@ -24,6 +29,7 @@ const Item = new mongoose.Schema({
   ,
   regen:Number,
   damage: Number,
+  
 });
 
 module.exports = mongoose.model("Item", Item);

@@ -37,6 +37,50 @@ const Player = new mongoose.Schema({
         type:Number,
         default:10
     },
+    head:{
+        type:String,
+        default:"none"
+    },
+    shoulders:{
+        type:String,
+        default:"none"
+    },
+    chest:{
+        type:String,
+        default:"none"
+    },
+    hands:{
+        type:String,
+        default:"none"
+    },
+    leggings:{
+        type:String,
+        default:"none"
+    },
+    feet:{
+        type:String,
+        default:"none"
+    },
+    weaponOneHand:{
+        type:String,
+        default:"none"
+    },
+    weaponTwoHand:{
+        type:String,
+        default:"none"
+    },
+    shield:{
+        type:String,
+        default:"none"
+    },
+    charm:{
+        type:String,
+        default:"none"
+    },
+    offHand:{
+        type:String,
+        default:"none"
+    },
 
     bio:{
         type:String,
