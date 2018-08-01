@@ -15,20 +15,34 @@ const Item = new mongoose.Schema({
     type:String,
     required:true
   },
-  health:Number
-  ,
-  endurance:Number
-  ,
-  strength:Number
-  ,
-  intellect:Number
-  ,
-  agility:Number
-  ,
-  healing:Number
-  ,
-  regen:Number,
-  damage: Number,
+  health:{
+    type:Number,
+    default:0
+  },
+  endurance:{
+    type:Number,
+    default:0
+  },
+  strength:{
+    type:Number,
+    default:0
+  },
+  intellect:{
+    type:Number,
+    default:0
+  },
+  agility:{
+    type:Number,
+    default:0
+  },
+  healing:{
+    type:Number,
+    default:0
+  },
+  damage: {
+    type:Number,
+    default:0
+  },
   
 });
 
