@@ -43,6 +43,10 @@ const Item = new mongoose.Schema({
     type:Number,
     default:0
   },
+  rarity:{
+    type:String,
+    default:"common"
+  }
   
 });
 
