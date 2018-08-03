@@ -43,7 +43,7 @@ router
 
 router
 .post('/',(req,res)=>{
-    const Attack = new Attack(req.body)
+    const attack = new Attack(req.body)
     attack
     .save()
     .then(response=>{

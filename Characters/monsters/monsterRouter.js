@@ -43,7 +43,7 @@ router
 
 router
 .post('/',(req,res)=>{
-    const Monster = new Monster(req.body)
+    const monster = new Monster(req.body)
     monster
     .save()
     .then(response=>{
