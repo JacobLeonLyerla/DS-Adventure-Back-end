@@ -19,6 +19,15 @@ const Player = new mongoose.Schema({
      type:String,
      required:true
     },
+    experience:{
+        type:Number,
+        default:0,
+    },
+
+    currentBattle:{
+        type:ObjectId,
+        ref:'Moster'
+    },
    
     health:{
         type:Number,

@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const ItemsRouter = require("./things/itemsRouter")
 const PlayerRouter = require("./Characters/playerRouter")
 const BHRouter = require("./Locations/bhRouter")
+const MonsterRouter =require("./Characters/monsters/monsterRouter")
+const AttackRouter = require("./Characters/abilities/attackRouter")
 const { username, password } = require("./dontlook");
 
 const server = express();
@@ -14,6 +16,8 @@ server.use(express.json());
 server.use("/players",PlayerRouter)
 server.use("/items",ItemsRouter)
 server.use("/blackheart", BHRouter)
+server.use("/monsters",MonsterRouter)
+server.use("/attacks",AttackRouter)
 
 mongoose
   .connect(`mongodb://${username}:${password}@ds255451.mlab.com:55451/ds`, { useNewUrlParser: true })
