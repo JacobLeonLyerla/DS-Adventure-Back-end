@@ -24,10 +24,14 @@ const Player = new mongoose.Schema({
         default:0,
     },
 
-    currentBattle:{
+    currentBattle:[{
         type:ObjectId,
-        ref:'Moster'
-    },
+        ref:'Monster'
+    }],
+    attacks:[{
+        type:ObjectId,
+        ref:"Attack"
+    }],
    
     health:{
         type:Number,

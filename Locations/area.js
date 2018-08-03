@@ -6,10 +6,12 @@ const Area = new mongoose.Schema({
     required: true,
     unique: true
   },
-  monsters:{
+  monsters:[
+    {
     type:ObjectId,
-    ref:'Monster'
-  },
+    ref:"Monster"
+  }
+],
 
   items: [
     {

@@ -6,10 +6,19 @@ const Monster = new mongoose.Schema({
     required: true,
     unique: true
   },
+  photo:String,
   attacks:[{
     type:ObjectId,
     ref:"Attack"
   }],
+level:{
+  type:Number,
+  default:1
+} ,
+rarity:{
+type:String,
+default:"common"
+},
 experience:{
     type:Number,
     default:0

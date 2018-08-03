@@ -5,7 +5,7 @@ const Area = require('./Area')
 router.get("/:id",(req,res)=>{
     const {id} = req.params
     Area
-    .findById(id).populate('items north south east west')
+    .findById(id).populate('items north south east west monsters')
     .then(response=>{
         res.status(202).json(response);
     }).

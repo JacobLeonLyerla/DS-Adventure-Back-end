@@ -2,15 +2,19 @@ const router = require('express').Router();
 
 const Player = require('./player')
 
+
+
+
+
 router.get("/:id",(req,res)=>{
     const {id} = req.params
     Player
-    .findById(id).populate('items gear currentLocation')
+    .findById(id).populate('items gear currentLocation attacks currentBattle')
     .then(response=>{
         res.status(202).json(response);
     }).
 catch(err=>{
-    res.status(500).json
+    res.status(500).json(err)
 })
 })
 router.put("/:id",(req,res)=>{

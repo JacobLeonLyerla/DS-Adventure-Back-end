@@ -5,7 +5,7 @@ const Monster = require('./monster')
 router.get("/:id",(req,res)=>{
     const {id} = req.params
     Monster
-    .findById(id).populate('items gear currentLocation')
+    .findById(id).populate('items attacks')
     .then(response=>{
         res.status(202).json(response);
     }).
@@ -32,7 +32,7 @@ router
 .get("/",(req,res)=>{
     Monster
     .find()
-    .sort('-created')
+    .sort()
     .then(response=>{
         res.status(200).json(response)
     })
