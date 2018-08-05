@@ -10,6 +10,18 @@ const Player = new mongoose.Schema({
     type:ObjectId,
     ref:'Area'  
    },
+   tempPlayer:
+       {
+           type:String,
+           default:"no temp"
+       }
+   ,
+   tempMonster:
+    {
+        type:String,
+        ref:'no temp'
+    }
+,
 
     age:{
        type:String,
@@ -23,6 +35,11 @@ const Player = new mongoose.Schema({
         type:Number,
         default:0,
     },
+level:{
+    type:String,
+    default:1
+}
+    ,
 
     currentBattle:[{
         type:ObjectId,
