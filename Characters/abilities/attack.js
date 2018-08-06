@@ -25,6 +25,11 @@ drain:{
     type:Number,
     defualt:0,
 },
+hitChance:{
+    type:Number,
+    default:25
+}
+,
 description:String,
 
 

@@ -13,7 +13,16 @@ const Temp = new mongoose.Schema({
     attacked:{
         type:Boolean,
         default:false
+    },
+    combat:{
+        type:String,
+        default:"Has not attacked yet"
+    },
+    spellUsed:{
+        type:String,
+        default:"any spells"
     }
+    
 
 })
 

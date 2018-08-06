@@ -22,6 +22,10 @@ const Player = new mongoose.Schema({
         ref:'no temp'
     }
 ,
+currentSpell:{
+    type:Number,
+    default:0
+},
 
     age:{
        type:String,
@@ -36,7 +40,7 @@ const Player = new mongoose.Schema({
         default:0,
     },
 level:{
-    type:String,
+    type:Number,
     default:1
 }
     ,
@@ -141,8 +145,25 @@ gear:[
     {
     type:ObjectId,
     ref:'Item'
+}
+],
+defeatedName:{
+    type:String,
+    default:"none"
 },
-]
+experienceGained:{
+    type:Number,
+    default:0
+},
+itemWon:{
+    type:String,
+    default:"none"
+},
+leveled:{
+    type:Boolean,
+    default:false
+}
+
 })
 
 module.exports =mongoose.model('Player',Player)
