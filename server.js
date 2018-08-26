@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const ItemsRouter = require("./things/itemsRouter")
+const ItemsRouter = require("./Things/itemsRouter")
 const PlayerRouter = require("./Characters/playerRouter")
 const BHRouter = require("./Locations/bhRouter")
 const MonsterRouter =require("./Characters/monsters/monsterRouter")
