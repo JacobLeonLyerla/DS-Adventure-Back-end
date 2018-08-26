@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Area = require('./Area')
+const Area = require('./area')
 
 router.get("/:id",(req,res)=>{
     const {id} = req.params
