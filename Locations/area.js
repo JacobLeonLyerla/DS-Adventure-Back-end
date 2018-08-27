@@ -19,6 +19,10 @@ const Area = new mongoose.Schema({
       ref: "Item"
     }
   ],
+  teir:{
+    type:Number,
+    default:1,
+  },
 
   west: [
     {
