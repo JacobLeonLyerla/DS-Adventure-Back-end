@@ -19,7 +19,6 @@ const { username, password } = require("./dontlook");
 const server = express();
 server.use(cors());
 server.use(express.json());
-server.use("/auth", AuthRouter);
 server.use("/players",PlayerRouter)
 server.use("/items",ItemsRouter)
 server.use("/blackheart", BHRouter)
