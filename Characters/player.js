@@ -152,6 +152,7 @@ const Player = new mongoose.Schema({
     type: String,
     default: "none"
   },
+  email:String,
   experienceGained: {
     type: Number,
     default: 0
@@ -165,11 +166,8 @@ const Player = new mongoose.Schema({
     default: false
   }
 });
-
-//Added in Bcrypt for PW hashing
 Player.pre("save", function(next) {
-  // check if record is new, fixes the issue with rehashing user's password on 
-  // each added letter that calls save()
+
   if (!this.isModified("password")) return next();
 
   bcrypt.hash(this.password, SALT_ROUNDS, (err, hash) => {
@@ -194,9 +192,5 @@ Player.methods.addLetter = function(letter_id) {
 };
 
 Player.plugin(uniqueValidator);
-
-module.exports = mongoose.model("User", Player);
-
-
 
 module.exports = mongoose.model("Player", Player);
