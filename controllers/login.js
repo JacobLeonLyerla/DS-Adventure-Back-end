@@ -2,9 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../Characters/player");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-console.log("test me here")
 const makeToken = user => {
-console.log(user)
   const payload = {
     sub: user._id,
     name: user.name,
@@ -34,7 +32,6 @@ const localStrategy = new LocalStrategy((name, password, done) => {
 const authenticate = passport.authenticate("local", { session: false });
 
 const login = (req, res) => {
-  console.log(req.body)
   res.json({ token: makeToken(req.user), user: req.user });
 };
 
