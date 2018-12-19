@@ -12,6 +12,8 @@ const BHRouter = require("./Locations/bhRouter")
 const MonsterRouter =require("./Characters/monsters/monsterRouter")
 const AttackRouter = require("./Characters/abilities/attackRouter")
 const TempRouter = require("./Characters/tempStats/tempRouter")
+const AuthRouter = require("./routers/authRouter");
+
 const { username, password } = require("./dontlook");
 
 const server = express();
@@ -24,6 +26,7 @@ server.use("/blackheart", BHRouter)
 server.use("/monsters",MonsterRouter)
 server.use("/attacks",AttackRouter)
 server.use("/temps",TempRouter)
+server.use("/auth", AuthRouter);
 mongoose
   .connect(`mongodb://${username}:${password}@ds255451.mlab.com:55451/ds`, { useNewUrlParser: true })
   .catch(err => {
