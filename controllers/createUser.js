@@ -2,8 +2,8 @@ const User = require("../Characters/player");
 const validateRegisterInput = require("../validation/register");
 
 const createUser = (req, res) => {
+ 
   const myNewUser = new User(req.body);
-
   const { errors, isValid } = validateRegisterInput(req.body);
   if (!isValid) return res.status(400).json(errors);
 
