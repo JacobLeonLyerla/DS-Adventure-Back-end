@@ -8,5 +8,4 @@ passport.use(localStrategy);
 
 router.route("/register").post(createUser);
 router.route("/login").post(authenticate, login);
-
 module.exports = router;
