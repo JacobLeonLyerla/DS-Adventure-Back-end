@@ -12,7 +12,7 @@ const BHRouter = require("./Locations/bhRouter")
 const MonsterRouter =require("./Characters/monsters/monsterRouter")
 const AttackRouter = require("./Characters/abilities/attackRouter")
 const TempRouter = require("./Characters/tempStats/tempRouter")
-const AuthRouter = require("./routers/authRouter");
+const AuthRouter = require("./Routers/authRouter");
 
 const { username, password } = require("./dontlook");
 
