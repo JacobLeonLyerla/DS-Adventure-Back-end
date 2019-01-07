@@ -164,7 +164,9 @@ const Player = new mongoose.Schema({
   leveled: {
     type: Boolean,
     default: false
-  }
+  },
+  idle:String,
+  battle:String
 });
 Player.pre("save", function(next) {
 

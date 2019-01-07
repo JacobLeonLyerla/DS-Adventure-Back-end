@@ -38,6 +38,8 @@ endurance:{
       ref: "Item"
     }
   ],
+  idle:String,
+  battle:String
 
 });
 
