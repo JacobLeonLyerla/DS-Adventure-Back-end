@@ -11,7 +11,7 @@ const makeToken = user => {
   };
   
   const options = { expiresIn: "2h" };
-  return jwt.sign(payload, "nwsecit11266", options);
+  return jwt.sign(payload, process.env.key, options);
 };
 
 const localStrategy = new LocalStrategy((name, password, done) => {

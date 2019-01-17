@@ -4,7 +4,7 @@ const passport = require("passport");
 const User = require("../Characters/player");
 const jwtOptions ={
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: "nwsecit11266"
+    secretOrKey: process.env.key
 };
 const jwtStrategy = new JwtStrategy(jwtOptions, (payload, done) => {
     User.findById(payload.sub)
