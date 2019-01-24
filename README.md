@@ -12,7 +12,7 @@
 # Deployment
 * Website: https://dungeon-run.netlify.com/
 # Front End Repo
-* Front End:https://github.com/JacobLeonLyerla/DS-Adventure-Front-end.
+* Front End: https://github.com/JacobLeonLyerla/DS-Adventure-Front-end
 ## Built With
 * [MongoDB](https://www.mongodb.com/what-is-mongodb) 
 * [Express.js](https://expressjs.com/)
