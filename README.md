@@ -10,8 +10,8 @@
 ![Dreamtrekking gif](https://media.giphy.com/media/69yuNNx5w77k43oKpY/giphy.gif)
 
 # Deployment
-* Website: https://dreamtrekking.netlify.com/
-# Back End Repo
+* Website: https://dungeon-run.netlify.com/
+# Front End Repo
 * Front End:https://github.com/JacobLeonLyerla/DS-Adventure-Front-end.
 
 ## Built With
