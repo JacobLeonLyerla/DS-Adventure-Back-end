@@ -12,7 +12,7 @@
 # Deployment
 * Website: https://dreamtrekking.netlify.com/
 # Back End Repo
-* Front End:https://github.com/JacobLeonLyerla/DS-Adventure-Front-end./blob/master/README.md
+* Front End:https://github.com/JacobLeonLyerla/DS-Adventure-Front-end.
 
 ## Built With
 * [MongoDB](https://www.mongodb.com/what-is-mongodb) 
