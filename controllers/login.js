@@ -1,16 +1,22 @@
 const jwt = require("jsonwebtoken");
+
 const User = require("../Characters/player");
+
 const passport = require("passport");
+
 const LocalStrategy = require("passport-local");
+
 const makeToken = user => {
   const payload = {
     sub: user._id,
+
     name: user.name,
-    email: user.email,
- 
+
+    email: user.email
   };
-  
+
   const options = { expiresIn: "2h" };
+
   return jwt.sign(payload, process.env.key, options);
 };
 
@@ -29,6 +35,7 @@ const localStrategy = new LocalStrategy((name, password, done) => {
     });
   });
 });
+
 const authenticate = passport.authenticate("local", { session: false });
 
 const login = (req, res) => {
