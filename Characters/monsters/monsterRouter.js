@@ -3,7 +3,9 @@ const router = require("express").Router();
 const Monster = require("./monster");
 
 router.get("/:id", (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
 
   Monster.findById(id)
     .populate("items attacks")
@@ -17,7 +19,9 @@ router.get("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
 
   const update = req.body;
 
@@ -31,7 +35,9 @@ router.put("/:id", (req, res) => {
     })
 
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
@@ -43,7 +49,9 @@ router.get("/", (req, res) => {
     })
 
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
@@ -56,7 +64,9 @@ router.post("/", (req, res) => {
     })
 
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
