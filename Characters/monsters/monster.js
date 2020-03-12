@@ -13,13 +13,11 @@ const Monster = new mongoose.Schema({
 
   photo: String,
 
-  attacks: [
-    {
-      type: ObjectId,
+  attacks: [{
+    type: ObjectId,
 
-      ref: "Attack"
-    }
-  ],
+    ref: "Attack"
+  }],
 
   level: {
     type: Number,
@@ -49,13 +47,11 @@ const Monster = new mongoose.Schema({
 
     default: 100
   },
-  items: [
-    {
-      type: ObjectId,
+  items: [{
+    type: ObjectId,
 
-      ref: "Item"
-    }
-  ],
+    ref: "Item"
+  }],
 
   idle: String,
 
