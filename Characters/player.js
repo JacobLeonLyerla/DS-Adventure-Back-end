@@ -50,7 +50,7 @@ const Player = new mongoose.Schema({
   class: {
     type: String,
 
-    required: true
+      required: true
   },
 
   experience: {
@@ -65,21 +65,17 @@ const Player = new mongoose.Schema({
     default: 1
   },
 
-  currentBattle: [
-    {
-      type: ObjectId,
+  currentBattle: [{
+    type: ObjectId,
 
-      ref: "Monster"
-    }
-  ],
+    ref: "Monster"
+  }],
 
-  attacks: [
-    {
-      type: ObjectId,
+  attacks: [{
+    type: ObjectId,
 
-      ref: "Attack"
-    }
-  ],
+    ref: "Attack"
+  }],
 
   health: {
     type: Number,
@@ -200,21 +196,17 @@ const Player = new mongoose.Schema({
     default: "Unknown"
   },
 
-  items: [
-    {
-      type: ObjectId,
+  items: [{
+    type: ObjectId,
 
-      ref: "Item"
-    }
-  ],
+    ref: "Item"
+  }],
 
-  gear: [
-    {
-      type: ObjectId,
+  gear: [{
+    type: ObjectId,
 
-      ref: "Item"
-    }
-  ],
+    ref: "Item"
+  }],
 
   defeatedName: {
     type: String,
@@ -247,7 +239,7 @@ const Player = new mongoose.Schema({
   battle: String
 });
 
-Player.pre("save", function(next) {
+Player.pre("save", function (next) {
   if (!this.isModified("password")) return next();
 
   bcrypt.hash(this.password, SALT_ROUNDS, (err, hash) => {
@@ -257,8 +249,8 @@ Player.pre("save", function(next) {
   });
 });
 
-Player.methods.checkPassword = function(plainTextPW, callback) {
-  return bcrypt.compare(plainTextPW, this.password, function(err, isValid) {
+Player.methods.checkPassword = function (plainTextPW, callback) {
+  return bcrypt.compare(plainTextPW, this.password, function (err, isValid) {
     if (err) {
       return callback(err);
     }
@@ -267,7 +259,7 @@ Player.methods.checkPassword = function(plainTextPW, callback) {
   });
 };
 
-Player.methods.addLetter = function(letter_id) {
+Player.methods.addLetter = function (letter_id) {
   this.letters.push(letter_id);
 };
 
