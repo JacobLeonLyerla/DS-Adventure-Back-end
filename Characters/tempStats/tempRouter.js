@@ -6,7 +6,9 @@ const Temp = require("./temp");
 router
   .route("/:id")
   .get((req, res) => {
-    const { id } = req.params;
+    const {
+      id
+    } = req.params;
     Temp.findById(id)
       .then(response => {
         res.status(202).json(response);
@@ -22,14 +24,18 @@ router
   })
 
   .delete((req, res) => {
-    const { id } = req.params;
+    const {
+      id
+    } = req.params;
     Temp.findByIdAndRemove(id).then(() => {
       res.status(204).end();
     });
   })
 
   .put((req, res) => {
-    const { id } = req.params;
+    const {
+      id
+    } = req.params;
     const update = req.body;
     const options = {
       new: true
@@ -47,7 +53,9 @@ router.get("/", (req, res) => {
     .catch(err => {
       res
         .status(500)
-        .json({ err: "The collection of Temp could not be obtained." });
+        .json({
+          err: "The collection of Temp could not be obtained."
+        });
     });
 });
 
@@ -62,8 +70,7 @@ router.post("/", (req, res) => {
       res
         .status(500)
         .json({
-          err:
-            "This response could not be added check their status and try again."
+          err: "This response could not be added check their status and try again."
         });
     });
 });
