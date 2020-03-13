@@ -11,21 +11,17 @@ const Area = new mongoose.Schema({
     unique: true
   },
 
-  monsters: [
-    {
-      type: ObjectId,
+  monsters: [{
+    type: ObjectId,
 
-      ref: "Monster"
-    }
-  ],
+    ref: "Monster"
+  }],
 
-  items: [
-    {
-      type: ObjectId,
+  items: [{
+    type: ObjectId,
 
-      ref: "Item"
-    }
-  ],
+    ref: "Item"
+  }],
 
   teir: {
     type: Number,
@@ -33,37 +29,29 @@ const Area = new mongoose.Schema({
     default: 1
   },
 
-  west: [
-    {
-      type: ObjectId,
+  west: [{
+    type: ObjectId,
 
-      ref: "Area"
-    }
-  ],
+    ref: "Area"
+  }],
 
-  east: [
-    {
-      type: ObjectId,
+  east: [{
+    type: ObjectId,
 
-      ref: "Area"
-    }
-  ],
+    ref: "Area"
+  }],
 
-  north: [
-    {
-      type: ObjectId,
+  north: [{
+    type: ObjectId,
 
-      ref: "Area"
-    }
-  ],
+    ref: "Area"
+  }],
 
-  south: [
-    {
-      type: ObjectId,
+  south: [{
+    type: ObjectId,
 
-      ref: "Area"
-    }
-  ]
+    ref: "Area"
+  }]
 });
 
 module.exports = mongoose.model("Area", Area);
