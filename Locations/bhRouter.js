@@ -3,7 +3,9 @@ const router = require("express").Router();
 const Area = require("./area");
 
 router.get("/:id", (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
 
   Area.findById(id)
     .populate("items north south east west monsters")
@@ -16,7 +18,9 @@ router.get("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
 
   const update = req.body;
 
@@ -29,7 +33,9 @@ router.put("/:id", (req, res) => {
       res.status(200).json(response);
     })
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
@@ -39,7 +45,9 @@ router.get("/", (req, res) => {
       res.status(200).json(response);
     })
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
@@ -52,7 +60,9 @@ router.post("/", (req, res) => {
       res.status(201).json(response);
     })
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
