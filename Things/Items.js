@@ -16,60 +16,60 @@ const Item = new mongoose.Schema({
     unique: true
   },
 
-  slot:{
-    type:String,
+  slot: {
+    type: String,
 
-    required:true
+    required: true
   },
 
-  health:{
-    type:Number,
+  health: {
+    type: Number,
 
-    default:0
+    default: 0
   },
 
-  endurance:{
-    type:Number,
+  endurance: {
+    type: Number,
 
-    default:0
+    default: 0
   },
 
-  strength:{
-    type:Number,
+  strength: {
+    type: Number,
 
-    default:0
+    default: 0
   },
 
-  intellect:{
-    type:Number,
+  intellect: {
+    type: Number,
 
-    default:0
+    default: 0
   },
 
-  agility:{
-    type:Number,
+  agility: {
+    type: Number,
 
-    default:0
+    default: 0
   },
 
-  healing:{
-    type:Number,
+  healing: {
+    type: Number,
 
-    default:0
+    default: 0
   },
 
   damage: {
-    type:Number,
+    type: Number,
 
-    default:0
+    default: 0
   },
 
-  rarity:{
-    type:String,
-    
-    default:"common"
+  rarity: {
+    type: String,
+
+    default: "common"
   }
-  
+
 });
 
 module.exports = mongoose.model("Item", Item);
