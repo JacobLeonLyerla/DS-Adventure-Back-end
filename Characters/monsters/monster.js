@@ -8,54 +8,58 @@ const Monster = new mongoose.Schema({
 
     required: true,
 
-    unique: true
+    unique: true,
   },
 
   photo: String,
 
-  attacks: [{
-    type: ObjectId,
+  attacks: [
+    {
+      type: ObjectId,
 
-    ref: "Attack"
-  }],
+      ref: "Attack",
+    },
+  ],
 
   level: {
     type: Number,
 
-    default: 1
+    default: 1,
   },
 
   rarity: {
     type: String,
 
-    default: "common"
+    default: "common",
   },
 
   experience: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   health: {
     type: Number,
 
-    default: 100
+    default: 100,
   },
   endurance: {
     type: Number,
 
-    default: 100
+    default: 100,
   },
-  items: [{
-    type: ObjectId,
+  items: [
+    {
+      type: ObjectId,
 
-    ref: "Item"
-  }],
+      ref: "Item",
+    },
+  ],
 
   idle: String,
 
-  battle: String
+  battle: String,
 });
 
 module.exports = mongoose.model("Monster", Monster);
