@@ -6,46 +6,46 @@ const Attack = new mongoose.Schema({
 
     required: true,
 
-    unique: true
+    unique: true,
   },
 
   level: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   cost: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   damage: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   leach: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   drain: {
     type: Number,
 
-    defualt: 0
+    defualt: 0,
   },
 
   hitChance: {
     type: Number,
 
-    default: 25
+    default: 25,
   },
 
-  description: String
+  description: String,
 });
 
 module.exports = mongoose.model("Attack", Attack);
