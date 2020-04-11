@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
 const Item = new mongoose.Schema({
-
   name: {
     type: String,
 
-    required: true
+    required: true,
   },
 
   index: {
@@ -13,63 +12,62 @@ const Item = new mongoose.Schema({
 
     require: true,
 
-    unique: true
+    unique: true,
   },
 
   slot: {
     type: String,
 
-    required: true
+    required: true,
   },
 
   health: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   endurance: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   strength: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   intellect: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   agility: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   healing: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   damage: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   rarity: {
     type: String,
 
-    default: "common"
-  }
-
+    default: "common",
+  },
 });
 
 module.exports = mongoose.model("Item", Item);
