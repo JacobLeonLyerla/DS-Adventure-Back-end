@@ -14,204 +14,212 @@ const Player = new mongoose.Schema({
 
     required: true,
 
-    unique: true
+    unique: true,
   },
 
   currentLocation: {
     type: ObjectId,
 
-    ref: "Area"
+    ref: "Area",
   },
 
   tempPlayer: {
     type: String,
 
-    default: "no temp"
+    default: "no temp",
   },
 
   tempMonster: {
     type: String,
 
-    ref: "no temp"
+    ref: "no temp",
   },
 
   currentSpell: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   age: {
     type: String,
 
-    default: "Unknown"
+    default: "Unknown",
   },
 
   class: {
     type: String,
 
-      required: true
+    required: true,
   },
 
   experience: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   level: {
     type: Number,
 
-    default: 1
+    default: 1,
   },
 
-  currentBattle: [{
-    type: ObjectId,
+  currentBattle: [
+    {
+      type: ObjectId,
 
-    ref: "Monster"
-  }],
+      ref: "Monster",
+    },
+  ],
 
-  attacks: [{
-    type: ObjectId,
+  attacks: [
+    {
+      type: ObjectId,
 
-    ref: "Attack"
-  }],
+      ref: "Attack",
+    },
+  ],
 
   health: {
     type: Number,
 
-    default: 100
+    default: 100,
   },
 
   endurance: {
     type: Number,
 
-    default: 100
+    default: 100,
   },
 
   strength: {
     type: Number,
 
-    default: 10
+    default: 10,
   },
 
   intellect: {
     type: Number,
 
-    default: 10
+    default: 10,
   },
 
   agility: {
     type: Number,
 
-    default: 10
+    default: 10,
   },
 
   head: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   shoulders: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   chest: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   hands: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
   leggings: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   feet: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   weaponOneHand: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   weaponTwoHand: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   shield: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   charm: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   offHand: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   bio: {
     type: String,
 
-    default: "Mystery adventurer."
+    default: "Mystery adventurer.",
   },
 
   password: {
     type: String,
 
-    required: true
+    required: true,
   },
 
   created: {
     type: Date,
 
-    default: Date.now
+    default: Date.now,
   },
 
   gender: {
     type: String,
 
-    default: "Unknown"
+    default: "Unknown",
   },
 
-  items: [{
-    type: ObjectId,
+  items: [
+    {
+      type: ObjectId,
 
-    ref: "Item"
-  }],
+      ref: "Item",
+    },
+  ],
 
-  gear: [{
-    type: ObjectId,
+  gear: [
+    {
+      type: ObjectId,
 
-    ref: "Item"
-  }],
+      ref: "Item",
+    },
+  ],
 
   defeatedName: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   email: String,
@@ -219,24 +227,24 @@ const Player = new mongoose.Schema({
   experienceGained: {
     type: Number,
 
-    default: 0
+    default: 0,
   },
 
   itemWon: {
     type: String,
 
-    default: "none"
+    default: "none",
   },
 
   leveled: {
     type: Boolean,
 
-    default: false
+    default: false,
   },
 
   idle: String,
 
-  battle: String
+  battle: String,
 });
 
 Player.pre("save", function (next) {
