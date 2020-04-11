@@ -2,12 +2,7 @@ const Validator = require("validator");
 
 const isEmpty = require("./is-empty");
 
-const validateRegisterInput = ({
-  name,
-  email,
-  password,
-  password2
-}) => {
+const validateRegisterInput = ({ name, email, password, password2 }) => {
   let errors = {};
 
   name = !isEmpty(name) ? name : "";
@@ -18,12 +13,13 @@ const validateRegisterInput = ({
 
   password2 = !isEmpty(password2) ? password2 : "";
 
-  if (!Validator.isLength(name, {
+  if (
+    !Validator.isLength(name, {
       min: 2,
-      max: 30
-    })) {
-    errors.name =
-      "name most be six or more characters, no more than thirty.";
+      max: 30,
+    })
+  ) {
+    errors.name = "name most be six or more characters, no more than thirty.";
   }
 
   if (Validator.isEmpty(name)) {
@@ -42,10 +38,12 @@ const validateRegisterInput = ({
     errors.password = "Please enter a password.";
   }
 
-  if (!Validator.isLength(password, {
+  if (
+    !Validator.isLength(password, {
       min: 6,
-      max: 30
-    })) {
+      max: 30,
+    })
+  ) {
     errors.password =
       "Password most be six or more characters, no more than thirty.";
   }
@@ -60,9 +58,8 @@ const validateRegisterInput = ({
 
   return {
     errors,
-    isValid: isEmpty(errors)
+    isValid: isEmpty(errors),
   };
-
 };
 
 module.exports = validateRegisterInput;
