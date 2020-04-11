@@ -3,12 +3,10 @@ const router = require("express").Router();
 const Items = require("./Items");
 
 router.get("/:id", (req, res) => {
-  const {
-    id
-  } = req.params;
+  const { id } = req.params;
 
   Items.findById(id)
-    .then(response => {
+    .then((response) => {
       res.status(202).json(response);
     })
     .catch(() => {
@@ -17,23 +15,21 @@ router.get("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const {
-    id
-  } = req.params;
+  const { id } = req.params;
 
   const update = req.body;
 
   const options = {
-    new: true
+    new: true,
   };
 
   Items.findByIdAndUpdate(id, update, options)
-    .then(response => {
+    .then((response) => {
       res.status(200).json(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({
-        error: err
+        error: err,
       });
     });
 });
@@ -41,12 +37,12 @@ router.put("/:id", (req, res) => {
 router.get("/", (req, res) => {
   Items.find()
     .sort("-created")
-    .then(response => {
+    .then((response) => {
       res.status(200).json(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({
-        error: err
+        error: err,
       });
     });
 });
@@ -56,12 +52,12 @@ router.post("/", (req, res) => {
 
   items
     .save()
-    .then(response => {
+    .then((response) => {
       res.status(201).json(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({
-        error: err
+        error: err,
       });
     });
 });
